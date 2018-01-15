@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Task 4</title>
+</head>
+<body>
+    <div class="title">
+        <h1>Let's talk</h1>
+        <p>Think you have what it takes? Show us.</p>
+    </div>
+    <form>
+        <div class="personal">
+            <h3>1.Personal information</h3>
+                <input class="Q3-width" type="text" pattern="([a-zA-Z]{1,20}\s)([a-zA-Z]{1,20}\s?)+" name="full-name" placeholder="Full name*" required><!--
+                --><input class="Q-width" type="tel" pattern="^((00|\+?)(\d{1,3})|0?)\d{9}" name="phone" placeholder="Phone#*" required>
+                <input class="Q3-width" type="email" id="E" name="email" placeholder="Email*" required>
+                <input class="Q3-width" type="email" id="rE" name="r-email" placeholder="Re-enter email*" required>
+                <div class="space"></div>
+                <input class="F-width" type="text" name="address" placeholder="Address*" required>
+                <input class="F-width" type="text" name="sec-address">
+                <input class="Q-width" type="text" name="city" pattern="[a-zA-Z]{2,}" placeholder="City*" required><!-- 
+                --><input class="Q-width" type="text" name="state"  placeholder="State"><!-- 
+                --><input class="Q-width" type="text" name="country" pattern="[a-zA-Z]{2,}" placeholder="Country/Region*" required><!-- 
+                --><input class="Q-width" type="text" name="zip" pattern="\d{5}" placeholder="Zip/Postal codes" >
+                <div class="space"></div>
+                <input class="F-width" type="text" name="how" placeholder="How did you hear about us">
+        </div>
+        <div class="skills">
+            <h3>2.Skills and location</h3>
+            <h6> which is your primary design discripline?*</h6>
+            <input onclick="removeCheck(0)" type="radio" name="pDesign" id="DR" value="Design Research" required><label class="Q-width bord" for="DR">Design Research</label><!-- 
+            --><input onclick="removeCheck(1)" type="radio" name="pDesign" id="VD" value="Visual Design"><label class="Q-width bord" for="VD">Visual Design</label><!-- 
+            --><input onclick="removeCheck(2)" type="radio" name="pDesign" id="UD" value="UX Design"><label class="Q-width bord" for="UD">UX Design</label><!--
+            --><input onclick="removeCheck(3)" type="radio" name="pDesign" id="FD" value="Fron-end Dev"><label class="Q-width bord" for="FD">Fron-end Dev</label>
+            <div class="space"></div>
+            <div class="check1">
+                <h6> Do you have experience with any other discriplines?</h6>
+                <div id="new">
+                    <input type="checkbox" id="DeR" name="oDesign" value="Design Research"> <label class="remove" for="DeR" ><div class="siq"></div> Design Research<span class="RemoveS">x</span> </label>                            
+                    <input type="checkbox" id="ViD" name="oDesign" value="Visual Desig"> <label class="remove" for="ViD"><div class="siq"></div> Visual Design<span class="RemoveS">x</span> </label>
+                    <input type="checkbox" id="UxD" name="oDesign" value="UX Design"> <label class="remove" for="UxD"><div class="siq"></div> UX Design <span class="RemoveS">x</span> </label>
+                    <input type="checkbox" id="FrD" name="oDesign" value="Fron-end Dev"> <label class="remove" for="FrD"><div class="siq"></div> Fron-end Dev <span class="RemoveS">x</span> </label>
+                </div>
+                <div class="addNew">
+                    <input id="input" type="text" class="Q-width" value=""><a id="add" class="Q-width">Add</a>
+                </div>
+            </div>
+            <div class="check2">
+                <h6>Where are you interested in working?*</h6>
+                <p>You must be legaily authorized to work without visa sponsorship on the location you chose</p>
+                <input type="checkbox" id="AT" name="place" value="Austin, Texas"> <label for="AT"><div class="siq"></div> Austin, Texas</label>
+                <input type="checkbox" id="NN" name="place" value="New York, New York"> <label for="NN"><div class="siq"></div> New York, New York</label>
+                <input type="checkbox" id="TC" name="place" value="Toronto, Canada"> <label for="TC"><div class="siq"></div> Toronto, Canada</label>
+                <input type="checkbox" id="SC" name="place" value="Shanghai, Chaina"> <label for="SC"><div class="siq"></div> Shanghai, Chaina</label>
+                <input type="checkbox" id="DI" name="place" value="Dublin, Ireland"> <label for="DI"><div class="siq"></div> Dublin, Ireland</label>
+                <input type="checkbox" id="HU" name="place" value="Hursley, United Kingdom"> <label for="HU"><div class="siq"></div> Hursley, United Kingdom</label>
+                <input type="checkbox" id="BG" name="place" value="Boeblingen, Germany"> <label for="BG"><div class="siq"></div> Boeblingen, Germany</label>
+                <input type="checkbox" id="SE" name="place" value="Somewhere elase"> <label for="SE"><div class="siq"></div> Somewhere elase</label>
+            </div>
+            <div class="clear"></div>
+            <div class="space"></div>
+        </div>
+        <div>
+            <h3>3.Portfolio</h3>
+            <h6>Prove you're IBM's next great designer by showing us who you are. What you've done. How you think. Tell us your story.</h6>
+            <input class="F-width" type="text"  placeholder="Portfolio link*" required
+            pattern="^(http)[s]?:\/\/([a-z]{2,5}\.)?([a-z]{2,})\.[a-z]{2,3}$">
+            <div class="space"></div>
+            <textarea name="anotherlink"   rows="10"  placeholder="Anything else (another link, availability, ect.)?"></textarea>
+        </div>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div id="clone" style="visibility:hidden"><input type="checkbox" id="DeR" name="oDesign" value="Design Research"> <label class="remove" for="DeR" ><div class="siq"></div> Design Research <span class="RemoveS">x</span> </label></div>
+    <script src="./js/main.js"></script>
+
+</body>
+</html>
